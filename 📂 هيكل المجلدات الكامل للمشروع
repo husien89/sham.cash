@@ -1,0 +1,43 @@
+shamcash-android/
+├── app/
+│   ├── build.gradle
+│   ├── src/
+│   │   └── main/
+│   │       ├── AndroidManifest.xml
+│   │       ├── java/
+│   │       │   └── com/
+│   │       │       └── yourname/
+│   │       │           └── shamcash/
+│   │       │               ├── MainActivity.kt
+│   │       │               └── WebAppInterface.kt
+│   │       └── res/
+│   │           ├── layout/
+│   │           │   └── activity_main.xml
+│   │           ├── values/
+│   │           │   ├── strings.xml
+│   │           │   └── colors.xml
+│   │           ├── mipmap-hdpi/
+│   │           │   └── ic_launcher.png
+│   │           ├── mipmap-mdpi/
+│   │           │   └── ic_launcher.png
+│   │           ├── mipmap-xhdpi/
+│   │           │   └── ic_launcher.png
+│   │           ├── mipmap-xxhdpi/
+│   │           │   └── ic_launcher.png
+│   │           └── mipmap-xxxhdpi/
+│   │               └── ic_launcher.png
+│   └── proguard-rules.pro
+├── static/                          ← انسخ مجلد الويب كاملاً هنا
+│   ├── index.html
+│   ├── login.html
+│   ├── notifications.html
+│   ├── settings.html
+│   ├── app.js
+│   ├── auth.js                ✅ بيانات الدخول المخصصة هنا
+│   ├── data.js
+│   ├── styles.css
+│   └── shamcash-logo.svg
+├── build.gradle
+├── settings.gradle
+├── gradle.properties
+└── README.md
