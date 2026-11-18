@@ -6,16 +6,16 @@
 const USERS = [
     {
         id: 1,
-        username: "أحمد_السالم",
-        password: "كلمة_سر_قوية_33333",
+        username: "ahmed",      // ✅ ضع اسم المستخدم هنا
+        password: "_99155729614",      // ✅ ضع كلمة المرور هنا
         role: "owner",
         name: "أنت — المالك الكامل",
         permissions: ["all"]
     },
     {
         id: 2,
-        username: "زينب",
-        password: "monitor1113",
+        username: "مراقب",
+        password: "monitor123",
         role: "viewer",
         name: "حساب للمتابعة فقط",
         permissions: ["read"]
