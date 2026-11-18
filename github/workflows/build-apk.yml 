@@ -20,13 +20,12 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: إنشاء Gradle Wrapper تلقائياً
+      - name: إعداد Gradle تلقائياً
         run: |
-          # إنشاء مجلد
           mkdir -p gradle/wrapper
+          echo "Creating gradle wrapper files..."
           
-          # كتابة ملف الخصائص
-          cat > gradle/wrapper/gradle-wrapper.properties << EOF
+          cat > gradle/wrapper/gradle-wrapper.properties << 'EOF'
 distributionBase=GRADLE_USER_HOME
 distributionPath=wrapper/dists
 distributionUrl=https\://services.gradle.org/distributions/gradle-8.5-bin.zip
@@ -36,24 +35,23 @@ zipStoreBase=GRADLE_USER_HOME
 zipStorePath=wrapper/dists
 EOF
           
-          # تحميل ملف jar المطلوب
-          curl -L -o gradle/wrapper/gradle-wrapper.jar https://raw.githubusercontent.com/gradle/gradle/v8.5.0/gradle-wrapper.jar
+          # تحميل الملفات المطلوبة
+          wget -q -O gradle/wrapper/gradle-wrapper.jar https://raw.githubusercontent.com/gradle/gradle/v8.5.0/gradle-wrapper.jar
+          wget -q -O gradlew https://raw.githubusercontent.com/gradle/gradle/v8.5.0/gradlew
+          wget -q -O gradlew.bat https://raw.githubusercontent.com/gradle/gradle/v8.5.0/gradlew.bat
           
-          # تحميل سكربتات التشغيل
-          curl -L -o gradlew https://raw.githubusercontent.com/gradle/gradle/v8.5.0/gradlew
-          curl -L -o gradlew.bat https://raw.githubusercontent.com/gradle/gradle/v8.5.0/gradlew.bat
-          
-          # منح الصلاحيات
           chmod +x gradlew
+          ls -la
 
-      - name: بناء ملف APK
+      - name: بناء APK
         run: ./gradlew assembleDebug --stacktrace
 
-      - name: التحقق من ملف APK
+      - name: التحقق من الملف
         run: ls -la app/build/outputs/apk/debug/
 
-      - name: رفع ملف APK
+      - name: رفع APK
         uses: actions/upload-artifact@v4
         with:
           name: sham.cash-apk
           path: app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
