@@ -7,3 +7,5 @@
     name: ShamCash-Debug-APK
     path: app/build/outputs/apk/debug/*.apk
     retention-days: 30
+# بدلاً من assembleRelease
+run: ./gradlew --no-daemon assembleDebug
