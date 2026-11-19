@@ -18,3 +18,12 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+android {
+    // ... إعداداتك الأخرى هنا ...
+
+    // ✅ إعداد تقارير الفحص
+    lintOptions {
+        textReport project.hasProperty('isCI')
+        textOutput 'stdout'
+    }
+}
