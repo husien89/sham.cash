@@ -1,11 +1,10 @@
 - name: Build Debug APK
   run: ./gradlew --no-daemon assembleDebug
 
-- name: Upload APK
+- name: Upload Debug APK
   uses: actions/upload-artifact@v4
   with:
-    name: ShamCash-Debug-APK
+    name: Sham.Cash-Debug-APK
     path: app/build/outputs/apk/debug/*.apk
     retention-days: 30
-# بدلاً من assembleRelease
-run: ./gradlew --no-daemon assembleDebug
+    
