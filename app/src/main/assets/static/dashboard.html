@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>شام كاش - لوحة التحكم</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -60,6 +61,7 @@
             cursor: pointer;
             margin-top: 10px;
             width: 100%;
+            font-family: 'Tajawal', sans-serif;
         }
         .btn-logout:active {
             background: #c0392b;
@@ -69,7 +71,7 @@
 <body>
     <div class="header">
         <h1>مرحباً بك في شام كاش 💰</h1>
-        <p id="userName"></p>
+        <p id="userName">جاري التحميل...</p>
     </div>
 
     <div class="container">
@@ -96,10 +98,12 @@
 
     <script src="auth.js"></script>
     <script>
-        const user = checkAuth();
-        if (user) {
-            document.getElementById('userName').textContent = "أهلاً بك، " + user.name;
-        }
+        // حماية الصفحة: إذا مو مسجل دخول، رجعو على login
+        checkLogin();
+
+        // جيب اسم المستخدم الصح
+        const userName = getCurrentUser();
+        document.getElementById('userName').textContent = "أهلاً بك، " + userName;
     </script>
 </body>
 </html>
