@@ -1,20 +1,16 @@
-// auth.js - شام كاش
+// auth.js - شام كاش - النسخة النهائية
 
 function login(username, password) {
     username = username.trim();
     password = password.trim();
-
     if (!username || !password) {
         return { success: false, message: 'عبي اسم المستخدم وكلمة المرور' };
     }
-
-    // مستخدمين تجريبيين
     const users = {
         'admin': '123456',
         'husien': '123456',
         'test': 'test'
     };
-
     if (users[username] && users[username] === password) {
         localStorage.setItem('sham_user', username);
         localStorage.setItem('sham_logged', 'true');
@@ -38,4 +34,13 @@ function checkLogin() {
 
 function getCurrentUser() {
     return localStorage.getItem('sham_user') || 'ضيف';
+}
+
+// هاي للتوافق مع الكود القديم تبع dashboard
+function checkAuth() {
+    if (localStorage.getItem('sham_logged') !== 'true') {
+        window.location.href = 'login.html';
+        return null;
+    }
+    return { name: getCurrentUser() };
 }
