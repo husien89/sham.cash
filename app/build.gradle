@@ -1,4 +1,4 @@
-plugins {
+هplugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
 }
@@ -69,3 +69,34 @@ implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.8.6'
 
 // مكتبة Google Tink للتشفير
 implementation 'com.google.crypto.tink:tink-android:1.15.0'
+// Firebase BoM
+implementation platform('com.google.firebase:firebase-bom:35.2.0')
+
+// Firebase الأساسية
+implementation 'com.google.firebase:firebase-analytics'
+
+// اختر المكتبات التي تحتاجها فقط:
+
+// المصادقة
+implementation 'com.google.firebase:firebase-auth'
+
+// Firestore قاعدة البيانات
+implementation 'com.google.firebase:firebase-firestore'
+
+// Realtime Database
+implementation 'com.google.firebase:firebase-database'
+
+// تخزين الملفات
+implementation 'com.google.firebase:firebase-storage'
+
+// الإشعارات
+implementation 'com.google.firebase:firebase-messaging'
+
+// Crashlytics
+implementation 'com.google.firebase:firebase-crashlytics'
+
+// Remote Config
+implementation 'com.google.firebase:firebase-config'
+
+// In-App Messaging
+implementation 'com.google.firebase:firebase-inappmessaging'
