@@ -49,3 +49,16 @@ dependencies {
 }
 classpath 'com.google.gms:google-services:4.4.0' // استخدم أحدث إصدار
 apply plugin: 'com.google.gms.google-services'
+dependencies {
+    // AndroidX & Jetpack
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'androidx.datastore:datastore-preferences:1.1.7'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.9.0'
+    // ... يمكنك إضافة مكتبات Jetpack أخرى حسب الحاجة
+
+    // Google Tink (للتشفير)
+    implementation 'com.google.crypto.tink:tink-android:1.17.0'
+    
+    // Google Mobile Services (GMS) - تُضاف عادةً تلقائيًا مع Firebase
+    // implementation 'com.google.android.gms:play-services-base:18.5.0'
+}
