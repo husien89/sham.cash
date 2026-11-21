@@ -62,3 +62,10 @@ dependencies {
     // Google Mobile Services (GMS) - تُضاف عادةً تلقائيًا مع Firebase
     // implementation 'com.google.android.gms:play-services-base:18.5.0'
 }
+// مكتبات Android Jetpack و AndroidX
+implementation 'androidx.appcompat:appcompat:1.7.0'
+implementation 'androidx.datastore:datastore-preferences:1.1.1'
+implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.8.6'
+
+// مكتبة Google Tink للتشفير
+implementation 'com.google.crypto.tink:tink-android:1.15.0'
