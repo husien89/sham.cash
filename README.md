@@ -1,12 +1,13 @@
 # sham.cash
 
-Android WebView app. The web UI (login.html, dashboard.html, auth.js)
-lives in app/src/main/assets/static.
+Native Android WebView application.
 
-Build on GitHub: Actions tab -> Build Sham.Cash APK -> Run workflow.
-The APK is under Artifacts.
+## Build
 
-Build locally:
+GitHub Actions builds the APK automatically. The APK is available from the workflow artifacts.
 
-    gradle wrapper
-    ./gradlew assembleDebug
+For a local build:
+
+```bash
+gradle wrapper --gradle-version 8.9
+./gradlew assembleDebug
