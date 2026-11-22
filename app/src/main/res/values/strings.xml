@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SHAM.CASH</string>
+    <string name="select_file">اختر ملفاً</string>
+    <string name="no_file_picker">لا يوجد تطبيق لاختيار الملفات</string>
+    <string name="no_app_to_open">لا يوجد تطبيق لفتح هذا الرابط</string>
+    <string name="downloading">جاري التنزيل…</string>
+    <string name="download_started">بدأ التنزيل…</string>
+    <string name="download_failed">فشل التنزيل: %1$s</string>
+</resources>
