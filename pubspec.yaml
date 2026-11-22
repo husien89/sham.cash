@@ -1,46 +1,22 @@
+name: sham_cash
+publish_to: none
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
 dependencies:
   flutter:
     sdk: flutter
-    dependencies:
-  flutter:
-    sdk: flutter
-
-  # مكتبات الكاميرا والصور
   camera: ^0.11.0
   image_picker: ^1.1.2
-
-  # مكتبات Firebase و Google
   firebase_core: ^3.6.0
   google_ml_kit: ^0.19.0
-
-  # مكتبات الأمان والتشفير
   flutter_secure_storage: ^9.2.2
   local_auth: ^2.3.0
-
-  # مكتبات الإضافات (Plugins)
   url_launcher: ^6.3.1
   share_plus: ^10.1.2
   flutter_local_notifications: ^18.0.1
   open_filex: ^4.5.0
   webview_flutter: ^4.10.0
 
-  # مكتبات الكاميرا والصور
-  camera: ^0.11.0  # للوصول إلى الكاميرا
-  image_picker: ^1.1.2  # لاختيار الصور من المعرض أو الكاميرا
-
-  # مكتبات Firebase و Google
-  firebase_core: ^3.6.0
-  firebase_ml_kit: ^0.19.0  # أو google_ml_kit: ^0.19.0 حسب ما تستخدمه
-  # google_mobile_ads: ^5.1.0 # إذا كنت تستخدم إعلانات Google
-
-  apply plugin: 'com.google.gms.google-services'
-  # مكتبات الأمان والتشفير
-  flutter_secure_storage: ^9.2.2
-  local_auth: ^2.3.0
-
-  # مكتبات الإضافات (Plugins)
-  url_launcher: ^6.3.1
-  share_plus: ^10.1.2
-  flutter_local_notifications: ^18.0.1
-  open_filex: ^4.5.0  # بديل شائع لـ open_file
-  webview_flutter: ^4.10.0  # لفتح المتصفح داخل التطبيق
+flutter:
+  uses-material-design: true
