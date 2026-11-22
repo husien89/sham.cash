@@ -2,7 +2,7 @@ name: Build Sham.Cash APK
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, Pull-request ]
   pull_request:
     branches: [ main ]
   workflow_dispatch:
@@ -25,9 +25,14 @@ jobs:
         with:
           distribution: temurin
           java-version: '17'
+          cache: gradle
 
-      - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v4
+      - name: Set up Gradle Wrapper
+        run: |
+          chmod +x gradlew 2>/dev/null || true
+          if [ ! -f gradlew ]; then
+            gradle wrapper --gradle-version 8.9
+          fi
 
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
@@ -53,7 +58,7 @@ jobs:
         run: |
           for v in KEYSTORE_BASE64 KEYSTORE_PASSWORD_SECRET KEY_ALIAS_SECRET KEY_PASSWORD_SECRET; do
             if [ -z "${!v}" ]; then
-              echo "::error::Secret for $v is missing or empty"
+              echo "::error::$v is missing or empty"
               exit 1
             fi
           done
