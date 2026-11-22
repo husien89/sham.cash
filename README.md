@@ -4,7 +4,7 @@ Native Android WebView application.
 
 ## Build
 
-GitHub Actions builds the APK automatically. The APK is available from the workflow artifacts.
+GitHub Actions builds the APK automatically...
 
 For a local build:
 
